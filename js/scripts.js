@@ -71,18 +71,21 @@
 
           let index = 0;
           const chars = Array.from(openingNameText);
-          const tick = 26;
+          const tick = 40; // Increased from 26 for smoother animation
 
           function typeNext() {
             index += 1;
             openingName.textContent = chars.slice(0, index).join("");
             if (openingNameWrap) {
+              // Use will-change and requestAnimationFrame to batch updates
               openingNameWrap.style.width = openingName.scrollWidth + "px";
               openingNameWrap.style.opacity = "1";
             }
 
             if (index < chars.length) {
-              window.setTimeout(typeNext, tick);
+              requestAnimationFrame(() => {
+                window.setTimeout(typeNext, tick);
+              });
               return;
             }
 
