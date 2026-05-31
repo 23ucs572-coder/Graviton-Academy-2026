@@ -1,0 +1,36 @@
+<svg width="1450" height="260" viewBox="0 0 1450 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wordGrad" x1="215" y1="20" x2="1290" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF3A1F"/>
+      <stop offset="1" stop-color="#D81308"/>
+    </linearGradient>
+    <linearGradient id="orbitGrad" x1="18" y1="28" x2="170" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F4CBE"/>
+      <stop offset="1" stop-color="#14256E"/>
+    </linearGradient>
+    <linearGradient id="gSplit" x1="28" y1="26" x2="218" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0.03" stop-color="#FF3A1F">
+        <animate attributeName="stop-color" values="#FF3A1F;#FF684D;#FF3A1F" dur="4.8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.5" stop-color="#F04A2E">
+        <animate attributeName="stop-color" values="#F04A2E;#6E58C8;#F04A2E" dur="4.8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#14256E">
+        <animate attributeName="stop-color" values="#14256E;#3152C8;#14256E" dur="4.8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1450" height="260" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#06112A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path d="M127 30C72 29 28 72 28 124C28 181 72 227 131 227C159 227 186 217 206 198L183 174C168 188 151 195 132 195C91 195 58 164 58 123C58 83 91 52 132 52C154 52 173 60 188 75L209 50C189 35 161 28 127 30Z" fill="url(#gSplit)"/>
+    <rect x="85" y="110" width="72" height="19" rx="9.5" fill="url(#gSplit)"/>
+    <ellipse cx="118" cy="127" rx="58" ry="125" transform="rotate(37 118 127)" stroke="url(#orbitGrad)" stroke-width="15"/>
+    <ellipse cx="118" cy="127" rx="55" ry="121" transform="rotate(37 118 127)" stroke="#081347" stroke-opacity="0.28" stroke-width="3"/>
+
+    <text x="238" y="150" fill="url(#wordGrad)" font-family="Arial Black, Impact, Segoe UI, sans-serif" font-size="118" font-weight="900" letter-spacing="1.2">raviton Academy</text>
+    <text x="990" y="218" fill="#102B73" font-family="Segoe Script, Brush Script MT, cursive" font-size="52" font-style="italic">for better learning...</text>
+  </g>
+</svg>
