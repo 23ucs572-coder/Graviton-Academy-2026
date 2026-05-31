@@ -186,10 +186,7 @@ body.is-opening .site-bg {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(50, 83, 212, 0.06) 0%, rgba(255, 46, 42, 0.06) 14%, transparent 32%),
-    radial-gradient(circle at 50% 50%, rgba(7, 16, 33, 0.98) 0%, rgba(7, 16, 33, 0.94) 48%, rgba(4, 10, 24, 0.98) 100%),
-    #07101f;
+  background: #0a0a0a;
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
@@ -202,16 +199,16 @@ body.is-opening .site-bg {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(108deg, transparent 0 44%, rgba(255, 255, 255, 0.03) 47%, rgba(50, 83, 212, 0.1) 50%, rgba(255, 255, 255, 0.03) 53%, transparent 56%);
-  opacity: 0;
-  transform: translate3d(-28%, 0, 0);
-  filter: blur(18px);
+    radial-gradient(circle at 50% 50%, rgba(255, 46, 42, 0.35) 0%, rgba(255, 46, 42, 0.15) 20%, transparent 50%);
+  opacity: 1;
+  filter: blur(80px);
   mix-blend-mode: screen;
   pointer-events: none;
+  animation: netflixGlow 4s ease-in-out infinite;
 }
 
 body.opening-ready .opening-screen::after {
-  animation: openingSoftSweep 2.2s linear both;
+  animation: netflixGlow 4s ease-in-out infinite;
 }
 
 .opening-screen::before {
@@ -220,9 +217,8 @@ body.opening-ready .opening-screen::after {
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(circle at 50% 50%, rgba(50, 83, 212, 0.04), transparent 24%),
-    linear-gradient(180deg, rgba(7, 16, 33, 0.26), rgba(7, 16, 33, 0.64));
-  opacity: 0.9;
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 1;
 }
 
 .opening-vignette {
@@ -362,6 +358,26 @@ body.opening-complete .opening-screen {
     opacity: 0.28;
     transform: translate3d(16%, 0, 0);
   }
+  100% {
+    opacity: 0;
+    transform: translate3d(48%, 0, 0);
+  }
+}
+
+@keyframes netflixGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(1) translate(-50%, -50%);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
   100% {
     opacity: 0;
     transform: translate3d(40%, 0, 0);
