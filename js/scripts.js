@@ -71,7 +71,7 @@
 
           let index = 0;
           const chars = Array.from(openingNameText);
-          const tick = 40; // Increased from 26 for smoother animation
+          const tick = 20; // Faster typing
 
           function typeNext() {
             index += 1;
