@@ -20,6 +20,10 @@
   function finishOpening() {
     if (!document.body.classList.contains("is-opening")) return;
 
+    if (document.querySelector(".opening-screen")) {
+      document.querySelector(".opening-screen").classList.add("is-curtain-close");
+    }
+
     document.body.classList.add("opening-complete");
 
     document.body.classList.remove("is-opening");
@@ -38,7 +42,7 @@
       return;
     }
 
-    const animationDuration = 1900;
+    const animationDuration = 1700;
 
     function startOpeningAnimation() {
       if (openingName && openingNameText) {
@@ -61,6 +65,11 @@
       requestAnimationFrame(function () {
         document.body.classList.add("opening-ready");
 
+        const openingScreen = document.querySelector(".opening-screen");
+        if (openingScreen) {
+          openingScreen.classList.add("is-curtain-open");
+        }
+
         window.setTimeout(function () {
           document.body.classList.add("opening-typing");
 
@@ -71,16 +80,17 @@
 
           let index = 0;
           const chars = Array.from(openingNameText);
-          const tick = 20; // Faster typing
+          const tick = 18;
 
           function typeNext() {
             index += 1;
-            openingName.textContent = chars.slice(0, index).join("");
-            if (openingNameWrap) {
-              // Use will-change and requestAnimationFrame to batch updates
-              openingNameWrap.style.width = openingName.scrollWidth + "px";
-              openingNameWrap.style.opacity = "1";
-            }
+            requestAnimationFrame(function () {
+              openingName.textContent = chars.slice(0, index).join("");
+              if (openingNameWrap) {
+                openingNameWrap.style.width = Math.ceil(openingName.scrollWidth) + "px";
+                openingNameWrap.style.opacity = "1";
+              }
+            });
 
             if (index < chars.length) {
               requestAnimationFrame(() => {
@@ -89,7 +99,7 @@
               return;
             }
 
-            window.setTimeout(finishOpening, 820);
+            window.setTimeout(finishOpening, 760);
           }
 
           typeNext();
@@ -184,6 +194,47 @@
   document.querySelectorAll("main section[id]").forEach(function (section) {
     sectionObserver.observe(section);
   });
+
+  // Set the active link based on current scroll position and page load
+  function updateActiveLink() {
+    const homeSection = document.querySelector("#home");
+    const sections = document.querySelectorAll("main section[id]");
+    let currentSection = null;
+    
+    // Check if we're at the top of the page (home section)
+    if (window.scrollY < 200) {
+      currentSection = "home";
+    } else {
+      // Find which section is currently visible
+      sections.forEach(function (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+    }
+
+    // Default to home if nothing is detected
+    if (!currentSection) {
+      currentSection = "home";
+    }
+
+    navLinks.forEach(function (link) {
+      const href = link.getAttribute("href");
+      if (href === "#" + currentSection) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Initialize active link immediately
+  updateActiveLink();
+  
+  // Update active link on scroll
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+  window.addEventListener("load", updateActiveLink);
 
   const revealObserver = new IntersectionObserver(
     function (entries, observer) {
