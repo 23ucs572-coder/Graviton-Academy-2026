@@ -317,7 +317,7 @@ body.opening-typing .opening-brand {
 
 .opening-name {
   display: inline-block;
-  color: rgb(205, 18, 46);
+  color: #ff2e2a;
   font-family: "Sora", sans-serif;
   font-size: inherit;
   font-weight: 1000;
@@ -444,7 +444,7 @@ body.opening-complete .opening-screen {
 }
 
 .opening-name {
-  color: rgb(205, 18, 46);
+  color: #ff2e2a;
 }
 
 .opening-screen .opening-brand,
