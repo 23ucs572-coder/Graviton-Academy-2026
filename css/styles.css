@@ -13,8 +13,8 @@
   --line: rgba(30, 41, 59, 0.08);
   --text: #1e293b;
   --muted: #64748b;
-  --brand: #2563eb;
-  --brand-deep: #1e40af;
+  --brand: #e2322c;
+  --brand-deep: #c81f24;
   --accent: #06b6d4;
   --accent-deep: #0c4a6e;
   --white-soft: #ffffff;
@@ -39,7 +39,7 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: rgba(37, 99, 235, 0.85) rgba(248, 250, 252, 0.9);
+  scrollbar-color: rgba(226, 50, 44, 0.85) rgba(248, 250, 252, 0.9);
   scrollbar-width: thin;
 }
 
@@ -82,13 +82,13 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.92), rgba(6, 182, 212, 0.92));
+  background: linear-gradient(180deg, rgba(226, 50, 44, 0.92), rgba(255, 107, 96, 0.92));
   border-radius: 999px;
   border: 2px solid rgba(248, 250, 252, 0.94);
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.96), rgba(34, 211, 238, 0.96));
+  background: linear-gradient(180deg, rgba(240, 78, 70, 0.96), rgba(255, 130, 120, 0.96));
 }
 
 body::before,
@@ -219,7 +219,7 @@ body.is-opening .site-bg {
   position: absolute;
   left: 0;
   right: 0;
-  height: 50.8vh;
+  height: 50%;
   z-index: 1;
   pointer-events: none;
   background: #07101f;
@@ -227,6 +227,7 @@ body.is-opening .site-bg {
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
+  display: block;
 }
 
 .opening-curtain-left {
@@ -907,10 +908,10 @@ h1 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #2563eb 100%);
+  background: linear-gradient(135deg, #e2322c 0%, #ff6b60 50%, #e2322c 100%);
   background-size: 200% 200%;
   color: #ffffff;
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.28);
+  box-shadow: 0 12px 32px rgba(226, 50, 44, 0.28);
   position: relative;
   overflow: hidden;
 }
@@ -926,7 +927,7 @@ h1 {
 
 .btn-primary:hover {
   animation: gradientShift 0.6s ease forwards;
-  box-shadow: 0 16px 48px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 16px 48px rgba(226, 50, 44, 0.4);
 }
 
 .btn-primary:hover::before {
@@ -934,17 +935,17 @@ h1 {
 }
 
 .btn-secondary {
-  border: 2px solid rgba(37, 99, 235, 0.2);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(226, 252, 255, 0.88));
-  color: #2563eb;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+  border: 2px solid rgba(226, 50, 44, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 235, 232, 0.88));
+  color: #e2322c;
+  box-shadow: 0 8px 24px rgba(226, 50, 44, 0.08);
   font-weight: 700;
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(226, 252, 255, 0.95));
-  border-color: rgba(37, 99, 235, 0.4);
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.16);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 235, 232, 0.95));
+  border-color: rgba(226, 50, 44, 0.4);
+  box-shadow: 0 12px 32px rgba(226, 50, 44, 0.16);
 }
 
 @keyframes buttonSweep {
@@ -976,9 +977,9 @@ h1 {
 .hero-points span {
   padding: 9px 14px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(226, 252, 255, 0.34));
-  border: 1px solid rgba(37, 99, 235, 0.14);
-  color: #2563eb;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 235, 232, 0.34));
+  border: 1px solid rgba(226, 50, 44, 0.14);
+  color: #e2322c;
   font-size: 0.93rem;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 }
@@ -1050,7 +1051,7 @@ h1 {
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(6, 182, 212, 0.4), transparent);
+  background: linear-gradient(90deg, rgba(226, 50, 44, 0.6), rgba(226, 50, 44, 0.4), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1126,7 +1127,7 @@ h1 {
   display: block;
   font-family: "Sora", sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 48%, #06b6d4 100%);
+  background: linear-gradient(135deg, #e2322c 0%, #ff6b60 48%, #ff8a7f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1186,15 +1187,15 @@ h1 {
 .result-band div {
   padding: 16px;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(226, 252, 255, 0.28));
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 235, 232, 0.28));
+  border: 1px solid rgba(226, 50, 44, 0.2);
 }
 
 .journey-strip span {
   display: inline-block;
   margin-bottom: 8px;
   font-family: "Sora", sans-serif;
-  color: #2563eb;
+  color: #e2322c;
   font-size: 0.86rem;
 }
 
@@ -1221,11 +1222,11 @@ h1 {
   margin-bottom: 12px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(6, 182, 212, 0.08));
-  color: #2563eb;
+  background: linear-gradient(135deg, rgba(226, 50, 44, 0.12), rgba(255, 107, 96, 0.08));
+  color: #e2322c;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1.5px solid rgba(37, 99, 235, 0.3);
+  border: 1.5px solid rgba(226, 50, 44, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1259,7 +1260,7 @@ h1 {
 .contact-form label {
   display: grid;
   gap: 8px;
-  color: #2563eb;
+  color: #e2322c;
   font-weight: 500;
 }
 
@@ -1267,7 +1268,7 @@ h1 {
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(37, 99, 235, 0.16);
+  border: 1px solid rgba(226, 50, 44, 0.16);
   border-radius: 14px;
   padding: 14px 16px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.88));
