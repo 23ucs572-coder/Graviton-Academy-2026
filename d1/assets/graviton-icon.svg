@@ -1,0 +1,51 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoRed" x1="55" y1="42" x2="190" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF5037">
+        <animate attributeName="stop-color" values="#FF5037;#FF2A16;#FF5037" dur="5.2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#D91B0E">
+        <animate attributeName="stop-color" values="#D91B0E;#FF4A2C;#D91B0E" dur="5.2s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="logoBlue" x1="45" y1="28" x2="245" y2="246" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#314DBF">
+        <animate attributeName="stop-color" values="#314DBF;#4B69E0;#314DBF" dur="5.2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#15276E">
+        <animate attributeName="stop-color" values="#15276E;#1E3997;#15276E" dur="5.2s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="300" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#06112A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path
+      d="M204 73C185 54 159 43 130 43C75 43 34 83 34 137C34 192 75 233 129 233C147 233 165 228 181 219L163 193C153 198 142 201 130 201C93 201 64 173 64 137C64 101 93 73 130 73C149 73 165 80 177 91L204 73Z"
+      fill="url(#logoRed)"
+    />
+    <rect x="110" y="123" width="67" height="20" rx="10" fill="url(#logoRed)"/>
+
+    <path
+      d="M48 218C76 245 123 259 170 252C216 246 253 221 269 187"
+      stroke="url(#logoBlue)"
+      stroke-width="20"
+      stroke-linecap="round"
+    />
+    <path
+      d="M78 234C58 218 44 198 38 176C28 139 41 96 74 61C110 23 165 10 213 26C245 37 267 57 278 83"
+      stroke="url(#logoBlue)"
+      stroke-width="20"
+      stroke-linecap="round"
+    />
+    <path
+      d="M222 33C248 51 263 76 266 108C271 151 252 193 213 223C170 256 107 264 55 243"
+      stroke="url(#logoBlue)"
+      stroke-width="12"
+      stroke-linecap="round"
+      opacity="0.9"
+    />
+  </g>
+</svg>
