@@ -604,8 +604,12 @@ body.opening-complete .opening-screen {
   transition: transform 0.16s ease-out;
   animation: logoIconAura 4.8s ease-in-out infinite;
   position: relative;
-  z-index: 2;
-  margin-left: 0;
+  z-index: 3;
+  margin-left: 25px;
+}
+
+.brand-icon::before {
+  display: none;
 }
 
 .brand-copy {
@@ -634,16 +638,22 @@ body.opening-complete .opening-screen {
 .brand::before {
   content: "";
   position: absolute;
-  left: 50%;
+  left: -10px;
   top: 50%;
-  width: clamp(140px, 16vw, 180px);
-  height: clamp(140px, 16vw, 180px);
-  border-radius: 999px;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
   pointer-events: none;
-  background: transparent;
-  opacity: 0;
+  background: #fbbf24;
+  opacity: 1;
   transition: opacity 0.22s ease;
-  z-index: 0;
+  z-index: 2;
+  border: 3px solid #d97706;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .brand::after {
@@ -657,7 +667,7 @@ body.opening-complete .opening-screen {
   border-radius: 999px;
   background: transparent;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   opacity: 0;
 }
 
@@ -687,6 +697,8 @@ body.opening-complete .opening-screen {
   gap: 3px;
   min-width: 0;
   flex: 0 1 auto;
+  text-align: center;
+  margin-left: 25px;
 }
 
 .brand-copy strong {
@@ -978,7 +990,7 @@ main {
 
 .brand-copy > span {
   color: rgba(255, 255, 255, 0.75);
-  font-size: clamp(0.58rem, 0.75vw, 0.68rem);
+  font-size: clamp(0.68rem, 0.88vw, 0.78rem);
 }
 
 .brand-initial {
@@ -1690,6 +1702,7 @@ h1 {
 
   .brand-copy {
     margin-left: 12px;
+    text-align: center;
   }
 
   .brand-copy strong {
@@ -1697,7 +1710,7 @@ h1 {
   }
 
   .brand-copy > span {
-    font-size: 0.74rem;
+    font-size: 0.65rem !important;
   }
 
   .intro-section {
@@ -1807,7 +1820,7 @@ h1 {
 
   .brand {
     grid-area: unset;
-    gap: 0;
+    gap: 8px;
     flex: 1;
     min-width: 0;
     max-width: none;
@@ -1816,7 +1829,7 @@ h1 {
     position: relative;
     margin-left: 0;
     padding-left: 0;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .site-nav {
@@ -1824,19 +1837,20 @@ h1 {
   }
 
   .brand-copy {
-    position: static;
-    left: auto;
-    top: auto;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: auto;
-    max-width: none;
+    max-width: calc(100vw - 120px);
     text-align: center;
     align-items: center;
     gap: 1px;
+    pointer-events: none;
   }
 
   .brand-copy strong {
-    font-size: clamp(0.82rem, 3.5vw, 1rem);
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
     white-space: nowrap;
   }
 
@@ -1869,10 +1883,13 @@ h1 {
 
   .brand-copy > span {
     display: block;
-    font-size: 0.58rem;
+    font-size: clamp(1.3rem, 4.2vw, 1.7rem);
     line-height: 1.15;
-    margin-top: 2px;
+    margin-top: 1px;
     color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
   }
 
   .menu-toggle {
@@ -2075,8 +2092,9 @@ h1 {
   .brand {
     gap: 8px;
     min-height: 44px;
-    margin-left: 0;
+    margin-left: 24px;
     padding-left: 0;
+    justify-self: center;
   }
 
   .site-nav {
@@ -2091,6 +2109,7 @@ h1 {
 
   .brand-copy {
     margin-left: 10px;
+    text-align: center;
   }
 
   .brand::before {
@@ -2106,7 +2125,7 @@ h1 {
   }
 
   .brand-copy strong {
-    font-size: 1.12rem;
+    font-size: 1.48rem;
   }
 
   .brand-copy {
@@ -2114,7 +2133,7 @@ h1 {
   }
 
   .brand-copy > span {
-    font-size: 0.75rem;
+    font-size: 1.78rem;
   }
 
   .hero-copy h1 {
@@ -2356,8 +2375,9 @@ h1 {
   .brand {
     min-height: 44px;
     gap: 8px;
-    margin-left: 0;
+    margin-left: 20px;
     padding-left: 0;
+    justify-self: center;
   }
 
   .brand::before {
@@ -2373,11 +2393,11 @@ h1 {
   }
 
   .brand-copy strong {
-    font-size: 1.02rem;
+    font-size: 1.32rem;
   }
 
   .brand-copy > span {
-    font-size: 0.64rem;
+    font-size: 1.42rem;
   }
 
   .menu-toggle {
